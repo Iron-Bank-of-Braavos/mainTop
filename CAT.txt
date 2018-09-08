@@ -1,0 +1,9 @@
+challenge : problem with webpack
+  message--You may need an appropriate loader to handle this file type.
+  module-fail: parser, acorn
+  resolve- checking all the versions of webpack, babel, babel-loader, 
+           using the most up-to-date version which allow to use the current non-deprecated syntax
+
+challenge : problem with relocate elements based on resizing review
+  resolve- using media query
+           based on different screen width, render specific tag or properties
