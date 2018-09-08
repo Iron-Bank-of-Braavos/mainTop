@@ -19,9 +19,9 @@ const NavBar = styled.section`
   border-style: solid;
   border-width: 0px 0px 1px 0px;
   border-color: lightgrey;
-  @media only screen and (min-width: 794px) {
+  @media only screen and (min-width: 795px) {
     border-color: black;
-    height: 55px;
+    height: 66px;
   }
 `
 const NavBar_bot= styled.section`
@@ -38,7 +38,7 @@ font-weight: 400;
 border-style: solid;
 border-width: 0px 0px 1px 0px;
 border-color: black;
-@media only screen and (min-width: 794px) {
+@media only screen and (min-width: 795px) {
   display: none;
 }
 `
@@ -51,7 +51,7 @@ const NavBar_logo = styled.section`
     color: rgb(3, 115, 98);
     cursor: pointer;
   }
-  @media only screen and (min-width: 794px) {
+  @media only screen and (min-width: 795px) {
     // top: 15px;
     margin-left: initial;
     margin-right: initial;
@@ -69,7 +69,7 @@ const NavBar_logo = styled.section`
 
 const NavBar_left = styled.section`
 display: none;
-@media only screen and (min-width: 794px) {
+@media only screen and (min-width: 795px) {
   display: inline;
   margin-top: 20px;
   position: relative;
@@ -90,7 +90,7 @@ const NavBar_leftbot = styled.section`
 `
 const NavBar_right = styled.section`
 display: none;
-@media only screen and (min-width: 794px) {
+@media only screen and (min-width: 795px) {
   display: inline;
   margin-bottom: 22px;
   position: relative;
@@ -113,7 +113,7 @@ const Title = styled.img`
 width: 11.5rem; 
 margin-left: 0%;
 position: absolute;
-@media only screen and (min-width: 794px) {
+@media only screen and (min-width: 795px) {
   width: 11.5rem; 
   margin-left: 50%;
   transform: translate(-50%);

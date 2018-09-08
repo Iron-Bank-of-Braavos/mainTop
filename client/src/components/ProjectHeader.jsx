@@ -3,35 +3,35 @@ import axios from 'axios';
 import styled from 'styled-components';
 var pandaLink = 'https://cdn1.img.sputniknews.com/images/105240/54/1052405402.jpg';
 
-const Projectsec = styled.section`
+const SubHeader = styled.section`
+  height: 243px;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-  font-size: 100%;
-  position: relative;
-  // height: 68px;
-  // color: rpg(40, 40, 40);
-  font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  resize: vertical;
-  @media only screen and (min-width: 794px) {
-    border-color: black;
-    height: 55px;
-  }
 `
+// const Projectsec = styled.section`
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-between;
+//   flex-wrap: nowrap;
+//   font-size: 100%;
+//   position: relative;
+//   font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+//   font-size: 14px;
+//   font-weight: 400;
+//   resize: vertical;
+//   @media only screen and (min-width: 795px) {
+//     border-color: black;
+//   }
+// `
 
 const Projectsec_left = styled.section`
-display: none;
-@media only screen and (min-width: 794px) {
-  display: inline;
-  // margin-top: 20px;
-  position: fixed;
-  left: 4.8%;
-  top: 13%;
-  order: 1;
-}
+  display: none;
+  @media only screen and (min-width: 795px) {
+    display: inline-block;
+    position: relative;
+    left: 4.8%;
+    margin-top: 53px;
+    order: 1;
+  }
 `
 const Userheader = styled.img`
 width: 3rem; 
@@ -39,7 +39,7 @@ height: 3rem;
 margin-left: 0%;
 position: absolute;
 border-radius: 50%;
-// @media only screen and (min-width: 794px) {
+// @media only screen and (min-width: 795px) {
 //   width: 11.5rem; 
 //   margin-left: 50%;
 //   transform: translate(-50%);
@@ -49,9 +49,9 @@ const Username = styled.p`
 width: 8rem; 
 height: 3rem;
 position: absolute;
-margin-top: 65px;
+margin-top: 64px;
 font-size: 14px;
-// @media only screen and (min-width: 794px) {
+// @media only screen and (min-width: 795px) {
 //   width: 11.5rem; 
 //   margin-left: 50%;
 //   transform: translate(-50%);
@@ -67,23 +67,31 @@ const Created = styled.p`
 `
 const Titlesec = styled.section`
 display: none;
-@media only screen and (min-width: 794px) {
+@media only screen and (min-width: 795px) {
   display: inline;
-  // margin-top: 20px;
-  position: fixed;
-  left: 20%;
-  top: 7%;
+  margin-top: 10px;
+  position: relative;
+  left: 10%;
   order: 2;
 }
 `
 const Titlepro = styled.p`
   flex-wrap: wrap;
-  width: 34rem;
-  height: 8rem;
-  font-size: 42px;
+  width: 42rem;
+  font-size: 40px;
   color: black;
   font-weight: 300;
+  height: 66px;
+  font-family: sans-serif;
 `
+const SubTitle = styled.p`
+  flex-wrap: wrap;
+  width: 34rem;
+  font-size: 1.2rem;
+  color: #656969;
+  // font-weight: 300;
+`
+
 
 class ProjectHeader extends Component {
   constructor(props) {
@@ -96,16 +104,19 @@ class ProjectHeader extends Component {
   render () {
     return (
       <div>
-        <Projectsec>
-          <Projectsec_left>
-            <Userheader src= {pandaLink} alt='not found' />
-            <Username> By Ramy Badie</Username>
-            <Created>3 created</Created>
-          </Projectsec_left>
-        </Projectsec>
-        <Titlesec>
-          <Titlepro>Unstable Unicorns: Control & Chaos (The Backercorn Project) </Titlepro>
-        </Titlesec>
+        <SubHeader>
+          {/* <Projectsec> */}
+            <Projectsec_left>
+              <Userheader src= {pandaLink} alt='not found' />
+              <Username> By Ramy Badie</Username>
+              <Created>3 created</Created>
+            </Projectsec_left>
+          {/* </Projectsec> */}
+          <Titlesec>
+            <Titlepro>Unstable Unicorns: Control & Chaos (The Backercorn Project) </Titlepro>
+            <SubTitle>Make new friends. Destroy them. Unicorns forever.</SubTitle>
+          </Titlesec>
+        </SubHeader>
       </div>
     )
   }

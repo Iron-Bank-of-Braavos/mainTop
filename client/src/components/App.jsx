@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import styled from 'styled-components';
 import Asset from './Asset.jsx';
 import Header from './Header.jsx'
 import ProjectHeader from './ProjectHeader.jsx';
+
+const Roll = styled.div`
+
+`
 
 class App extends Component {
   constructor(props) {
@@ -14,11 +19,12 @@ class App extends Component {
 
   render () {
     return (
-      <div>
+      <Roll>
         <Header />
         <ProjectHeader />
-        {/* <Asset /> */}
-      </div>
+        <Asset />
+        <p>hi</p>
+      </Roll>
     )
   }
 }
