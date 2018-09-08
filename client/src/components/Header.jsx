@@ -42,10 +42,15 @@ border-color: black;
   display: none;
 }
 `
+
 const NavBar_logo = styled.section`
   margin-top: 15px;
   margin-left: 38%;
   margin-right: 50%;
+  &:hover {
+    color: rgb(3, 115, 98);
+    cursor: pointer;
+  }
   @media only screen and (min-width: 794px) {
     // top: 15px;
     margin-left: initial;
@@ -55,6 +60,10 @@ const NavBar_logo = styled.section`
     left: 50%;
     width: 20rem;
     transform:translate(-50%);
+    &:hover {
+      color: rgb(3, 115, 98);
+      cursor: pointer;
+    }
   }
 `
 
@@ -68,8 +77,10 @@ display: none;
   left: 0;
   opacity: 0.7;
   order: 1;
+
 }
 `
+
 const NavBar_leftbot = styled.section`
   margin-top: 15px;
   position: fixed;
@@ -115,18 +126,31 @@ const Search_magnify = styled.img`
 `
 const Buttonlinkleft = styled.a`
   margin-left: 1.2rem;
+  &:hover {
+    color: rgb(3, 115, 98);
+    cursor: pointer;
+  }
 `
 const Buttonlinkleftsec = styled.a`
   margin-left: 1.0rem;
+  &:hover {
+    color: rgb(3, 115, 98);
+    cursor: pointer;
+  }
 `
 const Buttonlinkright = styled.a`
   margin-right: 1.2rem;
+  &:hover {
+    color: rgb(3, 115, 98);
+    cursor: pointer;
+  }
 `
 const Buttonlinkrightsec = styled.a`
   margin-right: 1.0rem;
-`
-const Greyline = styled.p`
-  white-space: pre-line
+  &:hover {
+    color: rgb(3, 115, 98);
+    cursor: pointer;
+  }
 `
 
 
