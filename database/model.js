@@ -1,8 +1,11 @@
 const connection = require('./index');
 const Sequelize = require('sequelize');
 
-const userInfo = connection.define ( 'userInfo', {
+const userinfo = connection.define ( 'userinfo', {
   creator: { 
+      type: Sequelize.STRING,
+      allowNull: false },
+  userAvatar: {
       type: Sequelize.STRING,
       allowNull: false },
   projectCreated: {
@@ -25,8 +28,11 @@ projectTitle: {
     allowNull: false },
 }, {timestamps: false} )
 
-const project = connection.define ( 'drinks', {
+const project = connection.define ( 'projects', {
     creator : {
+        type: Sequelize.STRING,
+        allowNull: false},
+    projectMainpic : {
         type: Sequelize.STRING,
         allowNull: false},
     projectTitle: { 
@@ -56,4 +62,4 @@ connection.sync ( {force: false} )
   .then ( () => {console.log('succefully synced mysql database') } )
   .catch ( err => console.log( 'mysql database failed ') );
 
-module.exports = { userInfo, pledge, project };
+module.exports = { userinfo, pledge, project };

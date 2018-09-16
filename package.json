@@ -5,6 +5,7 @@
   "main": "server/index.js",
   "scripts": {
     "start": "nodemon server",
+    "seed": "node database/seed.js",
     "test": "mocha test",
     "build": "webpack --watch"
   },

@@ -7,25 +7,15 @@ const SubHeader = styled.section`
   height: 243px;
   display: flex;
 `
-// const Projectsec = styled.section`
-//   display: flex;
-//   flex-direction: row;
-//   justify-content: space-between;
-//   flex-wrap: nowrap;
-//   font-size: 100%;
-//   position: relative;
-//   font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
-//   font-size: 14px;
-//   font-weight: 400;
-//   resize: vertical;
-//   @media only screen and (min-width: 795px) {
-//     border-color: black;
-//   }
-// `
 
 const Projectsec_left = styled.section`
+  margin-top: 450px;
+  margin-left: 0px;
+  order: 1;
+  width: 80px;
   display: none;
   @media only screen and (min-width: 795px) {
+    margin-left: 30px;
     display: inline-block;
     position: relative;
     left: 4.8%;
@@ -33,29 +23,40 @@ const Projectsec_left = styled.section`
     order: 1;
   }
 `
+const Projectsecsmaller_left = styled.section`
+  margin-left: 26px;
+  position: flex;
+  order: 1;
+  width: auto;
+  display: flex;
+  @media only screen and (min-width: 795px) {
+    display: none;
+  }
+`
 const Userheader = styled.img`
-width: 3rem; 
-height: 3rem;
+width: 1.5rem; 
+height: 1.5rem;
 margin-left: 0%;
 position: absolute;
 border-radius: 50%;
-// @media only screen and (min-width: 795px) {
-//   width: 11.5rem; 
-//   margin-left: 50%;
-//   transform: translate(-50%);
-//   }
+@media only screen and (min-width: 795px) {
+  width: 3rem; 
+  order: 1;
+  height: 3rem;
+  }
 `
 const Username = styled.p`
-width: 8rem; 
-height: 3rem;
-position: absolute;
-margin-top: 64px;
-font-size: 14px;
-// @media only screen and (min-width: 795px) {
-//   width: 11.5rem; 
-//   margin-left: 50%;
-//   transform: translate(-50%);
-//   }
+order: 2;
+margin-left: 40px;
+margin-top: 3px;
+@media only screen and (min-width: 795px) {
+  font-size: 14px;
+  width: 8rem; 
+  height: 3rem;
+  position: absolute;
+  margin-top: 64px;
+  margin-left: 0px;
+  }
 `
 const Created = styled.p`
  width: 8rem;
@@ -66,8 +67,10 @@ const Created = styled.p`
  font-weight: 300;
 `
 const Titlesec = styled.section`
-display: none;
+display: inline-block;
+margin-top: 330px;
 @media only screen and (min-width: 795px) {
+  content: normal;
   display: inline;
   margin-top: 10px;
   position: relative;
@@ -76,6 +79,11 @@ display: none;
 }
 `
 const Titlepro = styled.p`
+  margin-top: 35px;
+  margin-left: 5%;
+  margin-right: 5%;
+  font-size: 30px;
+@media only screen and (min-width: 795px) {
   flex-wrap: wrap;
   width: 42rem;
   font-size: 40px;
@@ -83,14 +91,21 @@ const Titlepro = styled.p`
   font-weight: 300;
   height: 66px;
   font-family: sans-serif;
+    }
 `
 const SubTitle = styled.p`
+margin-left: 33px;
+@media only screen and (min-width: 795px) {
+  display: inline;
+  margin-left: 40px;
   flex-wrap: wrap;
   width: 34rem;
   font-size: 1.2rem;
   color: #656969;
-  // font-weight: 300;
+  }
 `
+
+
 
 
 class ProjectHeader extends Component {
@@ -104,17 +119,20 @@ class ProjectHeader extends Component {
   render () {
     return (
       <div>
+        {console.log(this.props,' props')}
         <SubHeader>
-          {/* <Projectsec> */}
             <Projectsec_left>
-              <Userheader src= {pandaLink} alt='not found' />
-              <Username> By Ramy Badie</Username>
-              <Created>3 created</Created>
+              <Userheader src= {this.props.userinfo.userAvatar} alt='not found' />
+              <Username> By {this.props.userinfo.creator}</Username>
+              <Created>{this.props.userinfo.projectCreated} created</Created>
             </Projectsec_left>
-          {/* </Projectsec> */}
           <Titlesec>
-            <Titlepro>Unstable Unicorns: Control & Chaos (The Backercorn Project) </Titlepro>
-            <SubTitle>Make new friends. Destroy them. Unicorns forever.</SubTitle>
+            <Titlepro>{this.props.projectinfo.projectTitle.slice(0, 50)}</Titlepro>
+            <Projectsecsmaller_left>
+              <Userheader src= {this.props.userinfo.userAvatar} alt='not found' />
+              <Username> By {this.props.userinfo.creator}</Username>
+            </Projectsecsmaller_left>
+            <SubTitle>{this.props.projectinfo.projectSubtitle}</SubTitle>
           </Titlesec>
         </SubHeader>
       </div>

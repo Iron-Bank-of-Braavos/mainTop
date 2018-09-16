@@ -83,7 +83,7 @@ display: none;
 
 const NavBar_leftbot = styled.section`
   margin-top: 15px;
-  position: fixed;
+  position: relative;
   left: 0;
   opacity: 0.75;
   order: 1;
@@ -103,7 +103,7 @@ display: none;
 `
 const NavBar_rightbot = styled.section`
   margin-top: 5px;
-  position: fixed;
+  position: relative;
   right: 0;
   opacity: 0.75;
   order: 1;
