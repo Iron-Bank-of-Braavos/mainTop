@@ -119,7 +119,6 @@ class ProjectHeader extends Component {
   render () {
     return (
       <div>
-        {console.log(this.props,' props')}
         <SubHeader>
             <Projectsec_left>
               <Userheader src= {this.props.userinfo.userAvatar} alt='not found' />

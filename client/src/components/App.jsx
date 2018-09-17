@@ -17,7 +17,7 @@ class App extends Component {
       projectinfo: [{}, {}, {}, 
         {projectTitle: 'dbnotconnect', 
          projectSubtitle: 'dbnotconnect', 
-         projectMainpic: 'dbnotconnect',
+         projectMainpic: '/fail.png',
          projectCategory: 'dbnotconnect', 
          projectLocation: 'dbnotconnect',
          createDate: 'dbnotconnect',
@@ -30,7 +30,6 @@ class App extends Component {
 
   componentDidMount(){
     axios.get('api/home').then( res => {
-      console.log(res);
       this.setState({
         userinfo: res.data.userinfo,
         projectinfo: res.data.project,

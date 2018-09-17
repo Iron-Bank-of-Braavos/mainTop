@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import styled from 'styled-components';
 const Faker = require('faker');
 var randomName = Faker.name.findName();
@@ -221,12 +220,24 @@ class Asset extends Component {
     this.state = {
     }
     this.getDatediff= this.getDatediff.bind(this);
+    this.numberFormatting = this.numberFormatting.bind(this);
   }
 
   getDatediff() {
     var milisec = Date.parse(this.props.projectinfo.goalDate) - Date.parse(this.props.projectinfo.createDate);
     var date = Math.floor(milisec / 99360000);
     return date
+  }
+  numberFormatting(num) {
+    num = num.toString().split('');
+    if (num.length > 3) {
+      num.splice(num.length - 6, 0, ',');
+    }
+    if(num.length > 6 ) {
+      num.splice(num.length - 3, 0, ',');
+    }
+    num = num.join('');
+    return num
   }
 
   render () {
@@ -252,8 +263,8 @@ class Asset extends Component {
           </Projectsec_left>
           <Projectsec_right>
             <Infobox>
-              <Pledgenum>  ${this.props.pledgeinfo.currentPledge} </Pledgenum>
-              <Pledgegoal>  pledged of ${this.props.projectinfo.pledgeGoal} goal  </Pledgegoal>
+              <Pledgenum>  ${this.numberFormatting(this.props.pledgeinfo.currentPledge) } </Pledgenum>
+              <Pledgegoal>  pledged of ${this.numberFormatting(this.props.projectinfo.pledgeGoal)} goal  </Pledgegoal>
             </Infobox>
             <Infobox>
               <Numberstyle>  {this.props.pledgeinfo.backers} </Numberstyle>
@@ -274,7 +285,7 @@ class Asset extends Component {
               </Hypesec>
             </Butnlink>
               <Rightbotsec>
-                <HyperLinkRight>All or nothing.</HyperLinkRight> This project will only be funded if it reaches its goal by TIME
+                <HyperLinkRight>All or nothing.</HyperLinkRight> This project will only be funded if it reaches its goal by {this.props.projectinfo.goalDate}
               </Rightbotsec>
           </Projectsec_right>
         </Maincontent>
