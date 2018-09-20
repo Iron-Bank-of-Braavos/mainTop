@@ -157,11 +157,8 @@ const Buttonlinkrightsec = styled.a`
 class Header extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-    }
   }
-
-
+  
   render () {
     return (
       <div className='globalHeader'>

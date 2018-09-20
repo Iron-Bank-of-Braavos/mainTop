@@ -6,8 +6,13 @@
   "scripts": {
     "start": "nodemon server",
     "seed": "node database/seed.js",
-    "test": "mocha test",
+    "test": "jest --detectOpenHandles",
+    "test:watch": "jest --watch",
     "build": "webpack --watch"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "<rootDir>__test__/setup/setupEnzyme.js",
+    "testPathIgnorePatterns": ["<rootDir>/__test__/setup/"]
   },
   "author": "Brandon Xiong",
   "private": true,
@@ -40,6 +45,10 @@
     "babel-preset-react": "^6.16.0",
     "chai": "^3.5.0",
     "chai-things": "^0.2.0",
+    "enzyme": "^3.6.0",
+    "enzyme-adapter-react-16": "^1.5.0",
+    "enzyme-to-json": "^3.3.4",
+    "jest": "^23.6.0",
     "mocha": "^3.0.2",
     "nodemon": "^1.11.0",
     "supertest": "^2.0.0",

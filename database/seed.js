@@ -14,7 +14,8 @@ for(var i = 0; i< 100; i++) {
     userthumb = `https://randomuser.me/api/portraits/thumb/men/${i - 50}.jpg`
   }
   const user = [
-    {
+    { 
+      projectid: i + 1,
       creator: creator,
       userAvatar: userthumb,
       projectCreated: Faker.random.number(1000),
@@ -23,6 +24,7 @@ for(var i = 0; i< 100; i++) {
   ];
   const pledgedata = [
     {
+      projectid: i + 1,
       currentPledge: Faker.random.number({min: 1000, max: 100000000}),
       backers: Faker.random.number({min: 10, max: 10000}),
       projectTitle: projectTitle,
@@ -30,6 +32,7 @@ for(var i = 0; i< 100; i++) {
   ];
   const projectdata = [
     {
+      projectid: i + 1,
       creator: creator,
       projectMainpic: `https://s3-us-west-1.amazonaws.com/kickstarter0data/new/${i + 1}.jpg`,
       projectTitle: projectTitle,

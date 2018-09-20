@@ -2,33 +2,42 @@ const connection = require('./index');
 const Sequelize = require('sequelize');
 
 const userinfo = connection.define ( 'userinfo', {
-  creator: { 
-      type: Sequelize.STRING,
-      allowNull: false },
-  userAvatar: {
-      type: Sequelize.STRING,
-      allowNull: false },
-  projectCreated: {
-      type: Sequelize.INTEGER,
-      allowNull: false },
-  createDate: {
-      type: Sequelize.DATE,
-      allowNull: false },
+    projectid: {
+        type: Sequelize.INTEGER,
+        allowNull: false},
+    creator: { 
+        type: Sequelize.STRING,
+        allowNull: false },
+    userAvatar: {
+        type: Sequelize.STRING,
+        allowNull: false },
+    projectCreated: {
+        type: Sequelize.INTEGER,
+        allowNull: false },
+    createDate: {
+        type: Sequelize.DATE,
+        allowNull: false },
   }, {timestamps: false} )
 
 const pledge = connection.define ( 'pledge', {
-currentPledge: { 
-    type: Sequelize.INTEGER,
-    allowNull: false },
-backers: {
-    type: Sequelize.INTEGER,
-    allowNull: false },
-projectTitle: {
-    type: Sequelize.STRING,
-    allowNull: false },
+    projectid: {
+        type: Sequelize.INTEGER,
+        allowNull: false},
+    currentPledge: { 
+        type: Sequelize.INTEGER,
+        allowNull: false },
+    backers: {
+        type: Sequelize.INTEGER,
+        allowNull: false },
+    projectTitle: {
+        type: Sequelize.STRING,
+        allowNull: false },
 }, {timestamps: false} )
 
 const project = connection.define ( 'projects', {
+    projectid: {
+        type: Sequelize.INTEGER,
+        allowNull: false},
     creator : {
         type: Sequelize.STRING,
         allowNull: false},

@@ -1,5 +1,5 @@
 const express = require('express');
-let app = express();
+var app = express();
 const routes = require('./router.js');
 const Parser = require('body-parser');
 
@@ -11,7 +11,8 @@ app.use('/api', routes);
 
 let port = 3000;
 
-app.listen(port, function() {
+var server = app.listen(port, function() {
   console.log(`listening on port ${port}`);
 });
 
+module.exports = server;
