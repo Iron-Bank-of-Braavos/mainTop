@@ -68,7 +68,7 @@ const project = connection.define ( 'projects', {
     }, {timestamps: false} )
 
 connection.sync ( {force: false} )
-  .then ( () => {console.log('succefully synced mysql database') } )
-  .catch ( err => console.log( 'mysql database failed ') );
+  .then ( () => {console.log('succefully synced postgres database') } )
+  .catch ( err => console.log( 'postgres database failed ', err) );
 
 module.exports = { userinfo, pledge, project };
