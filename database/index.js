@@ -1,10 +1,10 @@
 
 const Sequelize = require('sequelize');
 
-var connection = new Sequelize ('projectFEC', '', '', {
-  host: 'localhost',
+var connection = new Sequelize ('projectFEC', 'projectFEC', 'noway', {
+  host: '172.18.0.2',
   dialect: 'postgres',
-  // port: '5432',
+  port: '5432',
 })
 
 connection.authenticate()
